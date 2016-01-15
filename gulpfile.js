@@ -23,7 +23,8 @@ gulp.task('buildApp', function() {
 });
 
 gulp.task('buildCSS', function() {
-   return gulp.src('bower_components/bootstrap/dist/css/bootstrap.css')
+	return gulp.src(['bower_components/bootstrap/dist/css/bootstrap.css',
+			 'src/**/*.css'])
        .pipe(concat('styles.css'))
        .pipe(minifycss())
        .pipe(gulp.dest('dist'))
