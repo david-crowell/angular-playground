@@ -7,7 +7,7 @@ npm install -g bower
 npm install -g karma
 npm install -g gulp
 ```
-Note: you only need to do this once on a given machine. -g install these tools globally.
+Note: you only need to do this once on a given machine. -g installs these tools globally.
 
 Known problem: need to deal with the angular-html preprocessor somehow. Otherwise, this will cause problems if we try to test directives & template code.
 
