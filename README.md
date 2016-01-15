@@ -22,3 +22,4 @@ gulp build: copies source into dist
 gulp test: runs karma (spec-running tool) & jshint (linter)
 gulp autorun: starts a Node server, initiates auto-refresh in the browser when dist changes
 ```
+Autorun starts up a Node server, generally accessible by pointing your browser to localhost:8080
