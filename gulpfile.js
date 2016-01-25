@@ -5,6 +5,8 @@ var minifycss = require('gulp-minify-css');
 var Server = require('karma').Server;
 var jshint = require('gulp-jshint');
 var connect = require('gulp-connect');
+var scss = require("gulp-scss");
+var merge = require('merge-stream');
 
 gulp.task('buildVendor', function() {
    return gulp.src(['bower_components/jquery/dist/jquery.min.js',
@@ -23,12 +25,15 @@ gulp.task('buildApp', function() {
 });
 
 gulp.task('buildCSS', function() {
-	return gulp.src(['bower_components/bootstrap/dist/css/bootstrap.css',
+	var cssStream = gulp.src(['bower_components/bootstrap/dist/css/bootstrap.css',
 			 'src/**/*.css'])
-       .pipe(concat('styles.css'))
-       .pipe(minifycss())
-       .pipe(gulp.dest('dist'))
-       .pipe(connect.reload());
+	    .pipe(minifycss());
+	var sassStream = gulp.src("src/**/*.scss")
+            .pipe(scss());
+	return merge (cssStream, sassStream)
+	    .pipe(concat('styles.css'))
+	    .pipe(gulp.dest('dist'))
+	    .pipe(connect.reload());
 });
 
 gulp.task('moveHTML', function() {
