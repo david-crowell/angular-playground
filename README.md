@@ -4,6 +4,8 @@ Basic scaffold for building Angular apps, using Node tools.
 Pre-installation steps:
 ```
 npm install -g bower
+npm install -g jasmine
+npm install -g jasmine-core
 npm install -g karma
 npm install -g gulp
 ```
