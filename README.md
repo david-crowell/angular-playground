@@ -27,3 +27,5 @@ gulp test: runs karma (spec-running tool) & jshint (linter)
 gulp autorun: starts a Node server, automatically runs gulp build when source changes, initiates auto-refresh in the browser when dist changes
 ```
 autorun starts up a Node server, generally accessible by pointing your browser to localhost:8080
+
+Note: gulp & gulp test will likely throw an error until you add some specs for it to run.
