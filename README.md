@@ -8,6 +8,7 @@ npm install -g jasmine
 npm install -g jasmine-core
 npm install -g karma
 npm install -g gulp
+npm install -g phantomjs-prebuilt 
 ```
 Note: you only need to do this once on a given machine. -g installs these tools globally.
 
